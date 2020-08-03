@@ -1,0 +1,21 @@
+#timeline {
+  border-left: 1px solid #ccc;
+
+  .group > .title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+
+    .dot {
+      content: '';
+      border: 8px solid #3c44b1;
+      border-radius: 16px;
+      height: 16px;
+      margin: 2px 16px 0 -8px;
+    }
+  }
+
+  ul > li {
+    font-size: 15px;
+  }
+}
