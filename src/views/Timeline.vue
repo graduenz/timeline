@@ -17,8 +17,8 @@
           <small class="d-block mb-2"
                  v-if="timeline.data.public">
             <b>Share link:</b>
-            <a :href="`https://timeline.guilhermeraduenz.dev/t/${timeline.data.shared_alias}`">
-              https://timeline.guilhermeraduenz.dev/t/{{ timeline.data.shared_alias }}
+            <a :href="`https://timeline.guilhermeraduenz.dev/#/t/${timeline.data.shared_alias}`">
+              https://timeline.guilhermeraduenz.dev/#/t/{{ timeline.data.shared_alias }}
             </a>
           </small>
           <b-button variant="primary"
@@ -45,7 +45,7 @@
             <b-form-group v-if="timeline.data.public"
                           description="This alias will be used to share your timeline"
                           class="mt-2">
-              <b-input-group prepend="https://timeline.guilhermeraduenz.dev/t/">
+              <b-input-group prepend="https://timeline.guilhermeraduenz.dev/#/t/">
                 <b-input v-model="timeline.data.shared_alias"
                         :required="timeline.data.public"
                         placeholder="Alias for sharing" />
