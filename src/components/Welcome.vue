@@ -13,46 +13,22 @@
       </div>
       <div class="col-lg-8 mt-4 mt-lg-0">
         <div class="row">
-          <div class="col-12">
-            <h3 class="heading-2">Features</h3>
+          <div class="col-12 pt-4 pl-4">
+            <h1>Built by a dev, for yourself.</h1>
+            <p>
+              This app is an experiment of Netlify's resources with a very simple purpose: allow people to create and edit two-level timelines and share it with people, if they want.
+            </p>
+            <p>
+              Also, it is an open source project on GitHub and is licensed under MIT. Feel free to do what you want.
+            </p>
+            <p>
+              <font-awesome-icon :icon="[ 'fab', 'github' ]" /> GitHub repository: <a href="https://github.com/graduenz/timeline">https://github.com/graduenz/timeline</a>
+            </p>
+            <p>
+              <font-awesome-icon :icon="[ 'fas', 'user' ]" /> Author's website: <a href="https://guilhermeraduenz.dev">https://guilhermeraduenz.dev</a>
+            </p>
           </div>
           <div class="col-lg-12">
-            <b-list-group class="mt-2">
-              <b-list-group-item>
-                <div class="d-flex align-items-center flex-column flex-sm-row">
-                  <div>
-                    <div class="bg-primary text-center text-white font-size-xl d-50 rounded-circle mb-3 mb-sm-0">
-                      <font-awesome-icon icon="list"/>
-                    </div>
-                  </div>
-                  <div class="pl-0 pl-sm-4">
-                    <div class="d-block text-center d-sm-flex align-items-center">
-                      <span class="font-size-lg">Timelines</span>
-                    </div>
-                    <p class="text-black-50 mb-0">
-                      Create and edit timelines for anything you want.
-                    </p>
-                  </div>
-                </div>
-              </b-list-group-item>
-              <b-list-group-item>
-                <div class="d-flex align-items-center flex-column flex-sm-row">
-                  <div>
-                    <div class="bg-primary text-center text-white font-size-xl d-50 rounded-circle mb-3 mb-sm-0">
-                      <font-awesome-icon icon="share-alt"/>
-                    </div>
-                  </div>
-                  <div class="pl-0 pl-sm-4">
-                    <div class="d-block text-center d-sm-flex align-items-center">
-                      <span class="font-size-lg">Sharing</span>
-                    </div>
-                    <p class="text-black-50 mb-0">
-                      Share your timelines with other people, even if they're not registered.
-                    </p>
-                  </div>
-                </div>
-              </b-list-group-item>
-            </b-list-group>
           </div>
         </div>
       </div>
