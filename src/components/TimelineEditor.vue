@@ -15,6 +15,7 @@
                         placeholder="Group title (e.g. July 2020)" />
                 <b-input-group-append>
                   <b-button variant="_"
+                            tabindex="-1"
                             @click="removeGroup(index)">
                     <font-awesome-icon icon="trash" />
                   </b-button>
@@ -36,6 +37,7 @@
                     <b-input-group-append>
                       <b-button variant="_"
                                 size="sm"
+                                tabindex="-1"
                                 @click="removeEntry(item, entryIndex)">
                         <font-awesome-icon icon="trash" />
                       </b-button>
