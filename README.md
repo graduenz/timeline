@@ -2,31 +2,30 @@
 
 ## TODO
 
-This application is running and working on [https://timeline.guilhermeraduenz.dev](https://timeline.guilhermeraduenz.dev), but there are things that need more work:
+This app is an experiment of Netlify's resources with a very simple purpose: allow people to create and edit two-level timelines and share it with people, if they want.
+
+It is running on [https://timeline.guilhermeraduenz.dev](https://timeline.guilhermeraduenz.dev), and there are some things that need more work:
 
 - Authentication:
-  - Move JWT to cookies
-  - Refresh JWT when expired
   - Login with Google
   - Login with GitHub
-- Usability:
-  - Improve "tab" key on TimelineEditor component
 - Improve feedback to users:
   - Success
   - Errors
   - Loading
 - More buttons when editing public timelines:
   - Copy share link to clipboard
-  - Oopen in new tab
+  - Open in new tab
 - Features:
   - Check (done status) on timeline's entries
   - Browse public timelines
 - Pages:
   - Status: Not found, Unauthorized
   - Account settings page
-  - More friendly home page
 
 ---
+
+You can run it locally anyway:
 
 ## Project setup
 ```

@@ -13,12 +13,41 @@ export function setupAxios() {
   axios.interceptors.response.use(response => {
     store.commit("loading/finishLoading");
     return response;
-  }, error => {
+  }, async error => {
     store.commit("loading/finishLoading");
+    if (error.response && error.response.status === 401) {
+      if (!session.hasUser()) {
+        window.location = "/";
+        return Promise.reject(error);
+      }
+
+      const user = session.getUser();
+      
+      var body = new FormData();
+      body.append("grant_type", "refresh_token");
+      body.append("refresh_token", user.token.refresh_token);
+      
+      const response = await axios.post(
+        `/.netlify/identity/token`,
+        body,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        });
+      
+        if (response.status === 200) {
+          user.token = response.data;
+          session.setUser(user);
+
+          error.config.headers["Authorization"] = axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.access_token}`;
+          return axios.request(error.config);
+        }
+    }
+    
     return Promise.reject(error);
   });
   
-  //TODO: Use cookies instead
   if (session.hasUser()) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${session.getUser().token.access_token}`;
   }

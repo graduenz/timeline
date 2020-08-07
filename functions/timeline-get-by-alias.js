@@ -3,8 +3,7 @@ const q = faunadb.query;
 
 const utils = require('./utils');
 
-exports.handler = async function (event, context) {
-  const { user } = context.clientContext;
+exports.handler = async function (event) {
   const client = new faunadb.Client({
     secret: process.env.FAUNADB_SERVER_SECRET,
   });
@@ -23,10 +22,10 @@ exports.handler = async function (event, context) {
     const timelineId = response.data[0].value.id;
     response = await client.query(q.Get(q.Ref(`classes/timelines/${timelineId}`)));
     
-    if (!utils.userOwns(response, user)) {
+    if (!response.data[0].value.public) {
       throw {
         success: false,
-        message: "This timeline does not belong to you",
+        message: "This timeline is not public",
       };
     }
 

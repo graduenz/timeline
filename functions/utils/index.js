@@ -4,6 +4,7 @@ module.exports = {
   },
 
   userOwns: function(item, user) {
+    if (!user) return false;
     return item.data.user_id === user.sub;
   }
 }

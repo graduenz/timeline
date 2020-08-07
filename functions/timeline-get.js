@@ -5,6 +5,8 @@ const utils = require('./utils');
 
 exports.handler = async function (event, context) {
   const { user } = context.clientContext;
+  if (!user) return { statusCode: 401 };
+
   const client = new faunadb.Client({
     secret: process.env.FAUNADB_SERVER_SECRET,
   });
