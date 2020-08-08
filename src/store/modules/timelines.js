@@ -4,6 +4,7 @@ export default {
   namespaced: true,
   state: () => ({
     timelines: [],
+    isLoadingTimelines: true,
     newTimeline: {
       name: null,
       description: null,
@@ -12,6 +13,7 @@ export default {
   }),
   getters: {
     timelines: state => state.timelines,
+    isLoadingTimelines: state => state.isLoadingTimelines,
     newTimeline: state => state.newTimeline,
     newTimelineId: state => state.newTimelineId,
   },
@@ -21,6 +23,9 @@ export default {
     },
     setTimelines: function(state, payload) {
       state.timelines = payload;
+    },
+    setLoadingTimelines: function(state, payload) {
+      state.isLoadingTimelines = payload;
     },
     setNewTimelineId: function(state, payload) {
       state.newTimelineId = payload;
@@ -34,8 +39,10 @@ export default {
   },
   actions: {
     async fetchTimelines({ commit }) {
-      commit("clearTimelines");
+      await commit("clearTimelines");
+      await commit("setLoadingTimelines", true);
       const response = await axios.get("/.netlify/functions/timeline-fetch");
+      await commit("setLoadingTimelines", false);
       await commit("setTimelines", response.data);
     },
     async createNew({ getters, commit }) {

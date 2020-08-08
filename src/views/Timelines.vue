@@ -3,7 +3,11 @@
     <b-row>
       <b-col class="d-lg-flex">
         <h3 class="heading-2 mr-4 flex-grow-1">Timelines</h3>
-        <b-button variant="success" size="sm" class="mt-2 mt-lg-0 d-block d-lg-inline-block" v-b-modal="'modal-new'">
+        <b-button variant="success"
+                  v-if="timelines && timelines.length > 0"
+                  size="sm"
+                  class="mt-2 mt-lg-0 d-block d-lg-inline-block"
+                  v-b-modal="'modal-new'">
           <span class="btn-wrapper--icon">
               <font-awesome-icon icon="plus" />
             </span>
@@ -35,7 +39,10 @@
         </b-modal>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row v-if="isLoadingTimelines">
+      <font-awesome-icon class="d-block mt-4" icon="spinner" spin />
+    </b-row>
+    <b-row v-else-if="timelines && timelines.length > 0">
       <b-col lg="6" xl="4" v-for="item in timelines" :key="item.ref['@ref'].id">
         <b-card class="mt-4 record">
           <slot header>
@@ -56,6 +63,21 @@
             </small>
           </slot>
         </b-card>
+      </b-col>
+    </b-row>
+    <b-row v-else>
+      <b-col class="text-center mt-4">
+        <img src="@/assets/svg/undraw_no_data_qbuo.svg" width="256" class="mb-4" />
+        <h3>No timelines found.</h3>
+        <p>Why don't create your first one?</p>
+        <b-button variant="success"
+                  class="mt-2 mt-lg-0 d-block d-lg-inline-block"
+                  v-b-modal="'modal-new'">
+          <span class="btn-wrapper--icon">
+              <font-awesome-icon icon="plus" />
+            </span>
+            <span class="btn-wrapper--label">Create my first timeline</span>
+        </b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -80,6 +102,7 @@ export default {
   computed: {
     ...mapGetters("timelines", [
       "timelines",
+      "isLoadingTimelines",
       "newTimeline",
       "newTimelineId"
     ]),
