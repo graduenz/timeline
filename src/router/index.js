@@ -8,6 +8,8 @@ import TimelineView from '../views/TimelineView.vue';
 import Account from '../views/Account.vue';
 import Timelines from '../views/Timelines.vue';
 import Timeline from '../views/Timeline.vue';
+import Unauthorized from '../views/Unauthorized.vue';
+import NotFound from '../views/NotFound.vue';
 
 Vue.use(VueRouter)
 
@@ -45,6 +47,20 @@ Vue.use(VueRouter)
     meta: {
       requiresAuth: true,
     }
+  },
+  {
+    path: "/unauthorized",
+    name: "Unauthorized",
+    component: Unauthorized,
+  },
+  {
+    path: "/not-found",
+    name: "NotFound",
+    component: NotFound,
+  },
+  {
+    path: "*",
+    redirect: "/not-found"
   },
   /*{
     path: '/about',

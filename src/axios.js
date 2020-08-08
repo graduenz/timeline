@@ -1,5 +1,6 @@
 import axios from "axios";
 import store from "@/store";
+import router from "@/router";
 import session from "@/services/session";
 
 export function setupAxios() {
@@ -17,7 +18,7 @@ export function setupAxios() {
     store.commit("loading/finishLoading");
     if (error.response && error.response.status === 401) {
       if (!session.hasUser()) {
-        window.location = "/";
+        router.replace("/unauthorized");
         return Promise.reject(error);
       }
 
