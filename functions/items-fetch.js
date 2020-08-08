@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
     const timelineId = utils.getId(event.path);
     let response = await client.query(q.Get(q.Ref(`classes/timelines/${timelineId}`)));
     
-    if (!response.data.public || !utils.userOwns(response, user)) {
+    if (!response.data.public && !utils.userOwns(response, user)) {
       throw {
         success: false,
         message: "This timeline is not public or does not belong to you",
