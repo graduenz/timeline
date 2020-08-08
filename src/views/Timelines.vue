@@ -1,8 +1,8 @@
 <template>
-  <b-container fluid class="mt-4">
+  <b-container class="mt-4">
     <b-row>
       <b-col class="d-lg-flex">
-        <h3 class="heading-2 mr-4">Timelines</h3>
+        <h3 class="heading-2 mr-4 flex-grow-1">Timelines</h3>
         <b-button variant="success" size="sm" class="mt-2 mt-lg-0 d-block d-lg-inline-block" v-b-modal="'modal-new'">
           <span class="btn-wrapper--icon">
               <font-awesome-icon icon="plus" />
@@ -36,7 +36,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col lg="4" xl="3" v-for="item in timelines" :key="item.ref['@ref'].id">
+      <b-col lg="6" xl="4" v-for="item in timelines" :key="item.ref['@ref'].id">
         <b-card class="mt-4 record">
           <slot header>
             <div class="d-flex mb-2">

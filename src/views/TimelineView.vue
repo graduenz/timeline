@@ -1,12 +1,12 @@
 <template>
-  <b-container fluid>
-    <b-row class="bg-white pt-3 pb-4 header"
+  <b-container>
+    <b-row class="pt-3 pb-4 header"
            v-if="timeline.data">
       <b-col>
-        <div class="mt-2">
-          <span class="h3 font-weight-bold">{{ timeline.data.name }}</span>
+        <div class="mt-2 text-center">
+          <span class="h1 font-weight-bold">{{ timeline.data.name }}</span>
         </div>
-        <div class="mt-2 mb-2">
+        <div class="mt-2 mb-2 text-center">
           {{ timeline.data.description }}
         </div>
       </b-col>
@@ -35,11 +35,6 @@
 
 <style lang="sass">
 @import "../assets/timeline.scss";
-</style>
-
-<style lang="sass" scoped>
-.header
-  border-bottom: 1px solid rgba(7, 9, 25, 0.1);
 </style>
 
 <script>

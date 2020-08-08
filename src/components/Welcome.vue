@@ -14,6 +14,7 @@
       <div class="col-lg-8 mt-4 mt-lg-0">
         <div class="row">
           <div class="col-12 pt-4 pl-4">
+            <img src="@/assets/svg/undraw_timeline_9u4u.svg" width="256" class="mb-4" />
             <h1>Built by a dev, for yourself.</h1>
             <p>
               This app is an experiment of Netlify's resources with a very simple purpose: allow people to create and edit two-level timelines and share it with people, if they want.

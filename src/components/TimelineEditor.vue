@@ -1,7 +1,7 @@
 <template>
   <div v-if="timeline.data">
     <b-row>
-      <b-col xl="6">
+      <b-col>
         <draggable :list="items" handle=".drag-group">
           <div v-for="(item, index) in items"
               :key="index"

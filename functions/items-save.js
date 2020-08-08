@@ -33,7 +33,7 @@ exports.handler = async function (event, context) {
     response = await client.query(q.Paginate(q.Match(q.Ref("indexes/idx_items_timeline_id"), timelineId)));
     const missingItemsIds = response.data
       .map(m => m.value.id)
-      .filter(id => items.findIndex(m => m.ref["@ref"].id === id) == -1);
+      .filter(id => items.findIndex(m => m.ref && m.ref["@ref"].id === id) == -1);
 
     const deleteMissingQuery = missingItemsIds.map(m => {
       return q.Delete(q.Ref(`classes/items/${m}`));

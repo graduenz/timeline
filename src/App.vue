@@ -7,7 +7,7 @@
       </div>
     </main>
     <footer class="footer">
-      <b-container fluid>
+      <b-container>
           <p>Copyright &copy; 2020 - All Rights Reserved. <b>Timeline App</b> <b-badge variant="danger">ALPHA</b-badge></p>
       </b-container>
     </footer>

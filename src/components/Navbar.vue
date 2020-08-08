@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" class="bg-primary p-3">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand text-center" href="/">
         <img src="@/assets/img/logo_nav.png" class="d-inline-block my-auto" height="30px">
       </a>

@@ -13,14 +13,7 @@ It is running on [https://timeline.guilhermeraduenz.dev](https://timeline.guilhe
   - Success
   - Errors
   - Loading
-- More buttons when editing public timelines:
-  - Copy share link to clipboard
-  - Open in new tab
-- Features:
-  - Check (done status) on timeline's entries
-  - Browse public timelines
 - Pages:
-  - Status: Not found, Unauthorized
   - Account settings page
 
 ---

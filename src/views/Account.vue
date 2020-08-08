@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="mt-4">
+  <b-container class="mt-4">
     <h3 class="heading-2">Account settings</h3>
   </b-container>
 </template>

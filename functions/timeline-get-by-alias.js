@@ -22,7 +22,7 @@ exports.handler = async function (event) {
     const timelineId = response.data[0].value.id;
     response = await client.query(q.Get(q.Ref(`classes/timelines/${timelineId}`)));
     
-    if (!response.data[0].value.public) {
+    if (!response.data.public) {
       throw {
         success: false,
         message: "This timeline is not public",
