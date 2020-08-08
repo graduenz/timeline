@@ -2,8 +2,8 @@
   <b-container>
     <div class="row">
       <div class="col-12">
-        <h1 class="heading-2">{{ isUserConfirm ? "Welcome back" : "Welcome" }}!</h1>
-        <h4 v-show="!isUserConfirm">You look new here.</h4>
+        <h1 class="heading-2">Welcome!</h1>
+        <h4>You look new here.</h4>
         <hr />
       </div>
     </div>
@@ -41,9 +41,6 @@
 import Authenticate from "@/components/Authenticate";
 
 export default {
-  props: {
-    isUserConfirm: Boolean,
-  },
   components: {
     Authenticate,
   },

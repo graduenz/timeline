@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import session from '@/services/session';
 
 import Home from '../views/Home.vue';
+import ConfirmationToken from "../views/ConfirmationToken.vue";
 import TimelineView from '../views/TimelineView.vue';
 import Account from '../views/Account.vue';
 import Timelines from '../views/Timelines.vue';
@@ -15,34 +16,39 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     component: Home,
   },
   {
-    path: '/t/:alias',
-    name: 'TimelineView',
+    path: "/confirmation_token=*",
+    name: "ConfirmationToken",
+    component: ConfirmationToken,
+  },
+  {
+    path: "/t/:alias",
+    name: "TimelineView",
     component: TimelineView,
   },
   {
-    path: '/account',
-    name: 'Account',
+    path: "/account",
+    name: "Account",
     component: Account,
     meta: {
       requiresAuth: true,
     }
   },
   {
-    path: '/timelines',
-    name: 'Timelines',
+    path: "/timelines",
+    name: "Timelines",
     component: Timelines,
     meta: {
       requiresAuth: true,
     }
   },
   {
-    path: '/timeline/:id',
-    name: 'Timeline',
+    path: "/timeline/:id",
+    name: "Timeline",
     component: Timeline,
     meta: {
       requiresAuth: true,
