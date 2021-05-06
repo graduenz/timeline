@@ -37,7 +37,7 @@ export default {
     auth: function(state) {
       if (!state.auth) {
         state.auth = new GoTrue({
-          APIUrl: "https://timeline.guilhermeraduenz.dev/.netlify/identity",
+          APIUrl: "https://timeline.rdnz.dev/.netlify/identity",
           audience: "",
           setCookie: false,
         });

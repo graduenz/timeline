@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <h1 class="heading-2">Welcome!</h1>
-        <h4>You look new here.</h4>
+        <h4>Are you new here?</h4>
         <hr />
       </div>
     </div>
@@ -26,7 +26,7 @@
               <font-awesome-icon :icon="[ 'fab', 'github' ]" /> GitHub repository: <a href="https://github.com/graduenz/timeline">https://github.com/graduenz/timeline</a>
             </p>
             <p>
-              <font-awesome-icon :icon="[ 'fas', 'user' ]" /> Author's website: <a href="https://guilhermeraduenz.dev">https://guilhermeraduenz.dev</a>
+              <font-awesome-icon :icon="[ 'fas', 'user' ]" /> Author's website: <a href="https://rdnz.dev">https://rdnz.dev</a>
             </p>
           </div>
           <div class="col-lg-12">

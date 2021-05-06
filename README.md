@@ -4,7 +4,7 @@
 
 This app is an experiment of Netlify's resources with a very simple purpose: allow people to create and edit two-level timelines and share it with people, if they want.
 
-It is running on [https://timeline.guilhermeraduenz.dev](https://timeline.guilhermeraduenz.dev), and there are some things that need more work:
+It is running on [https://timeline.rdnz.dev](https://timeline.rdnz.dev), and there are some things that need more work:
 
 - Authentication:
   - Login with Google

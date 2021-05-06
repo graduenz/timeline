@@ -18,10 +18,10 @@
             <small class="d-flex flex-wrap mb-2"
                   v-if="timeline.data.public">
               <b class="mr-1">Link to share:</b>
-              <a :href="`https://timeline.guilhermeraduenz.dev/#/t/${timeline.data.shared_alias}`"
+              <a :href="`https://timeline.rdnz.dev/#/t/${timeline.data.shared_alias}`"
                 target="_blank"
                 class="mr-1">
-                https://timeline.guilhermeraduenz.dev/#/t/{{ timeline.data.shared_alias }}
+                https://timeline.rdnz.dev/#/t/{{ timeline.data.shared_alias }}
               </a>
               <font-awesome-icon icon="copy"
                                 style="cursor: pointer"
@@ -51,7 +51,7 @@
               <b-form-group v-if="timeline.data.public"
                             description="This alias will be used to share your timeline"
                             class="mt-2">
-                <b-input-group prepend="https://timeline.guilhermeraduenz.dev/#/t/">
+                <b-input-group prepend="https://timeline.rdnz.dev/#/t/">
                   <b-input v-model="timeline.data.shared_alias"
                           :required="timeline.data.public"
                           placeholder="Alias for sharing" />
@@ -176,7 +176,7 @@ export default {
       this.dirty = false;
     },
     copyLinkToClipboard() {
-      navigator.clipboard.writeText(`https://timeline.guilhermeraduenz.dev/#/t/${this.timeline.data.shared_alias}`)
+      navigator.clipboard.writeText(`https://timeline.rdnz.dev/#/t/${this.timeline.data.shared_alias}`)
         .then(() => {
           //TODO: Positive feedback
         })
